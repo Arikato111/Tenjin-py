@@ -10,6 +10,10 @@ classifiers = [
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
 ]
+
 dynamic = ["version"]
 [tool.maturin]
 features = ["pyo3/extension-module"]
+
+[project.scripts]
+tenjin = "tenjin_sdn:cli"
