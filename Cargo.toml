@@ -1,7 +1,19 @@
 [package]
 name = "tenjin_sdn"
+description = "Tenjin is The SDN Framework writing with rust, this library is implement tenjin into python"
 version = "0.0.4"
+license = "MIT"
+license-file = "LICENSE"
 edition = "2021"
+readme = "README.md"
+authors = ["Nawasan <nawasan.dev@gmail.com>"]
+repository = "https://github.com/Arikato111/Tenjin-py"
+categories = ["command-line-utilities"]
+keywords = ["tenjin", "openflow", "sdn", "cli", "network"]
+
+homepage = "https://github.com/Arikato111/tenjin-py"
+documentation = "https://github.com/Arikato111/Tenjin-py/wiki"
+
 
 [lib]
 name = "tenjin_sdn"
