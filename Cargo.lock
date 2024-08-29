@@ -286,8 +286,6 @@ dependencies = [
 [[package]]
 name = "tenjin_sdn"
 version = "0.3.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fbc06a39aa312f8c4ccb4fb72b347bf849937ed4a4264a23f1f94c97d45deb85"
 dependencies = [
  "byteorder",
  "clap",

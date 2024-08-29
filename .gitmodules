@@ -1,0 +1,4 @@
+[submodule "Tenjin"]
+	path = Tenjin
+	url = https://github.com/Arikato111/Tenjin.git
+	branch = main
