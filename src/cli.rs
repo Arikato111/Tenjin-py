@@ -1,5 +1,6 @@
-use clap::{command, Parser, Subcommand};
-use std::{env::args, thread};
+use clap::{command, CommandFactory, Parser, Subcommand};
+use clap_complete::{generate, Shell};
+use std::{env::args, io, thread};
 use tenjin::{
     example::{Controller10, Controller13},
     openflow::{ofp10::ControllerFrame10, ofp13::ControllerFrame13},
@@ -28,6 +29,9 @@ pub enum Commands {
             help = "ip address"
         )]
         listen: String,
+    },
+    Generate {
+        shell: Shell,
     },
 }
 
@@ -70,6 +74,10 @@ pub fn system() {
             for th in thread_list {
                 let _ = th.join();
             }
+        }
+        Commands::Generate { shell } => {
+            let mut cli_gen = Cli::command();
+            generate(shell, &mut cli_gen, "tenjin", &mut io::stdout());
         }
     }
 }
