@@ -7,7 +7,7 @@ use tenjin::{
 };
 
 #[derive(Parser)]
-#[command(name = "tenjin",author, version, about, long_about = None)]
+#[command(name = "tenjin (py)",author, version, about, long_about = None)]
 pub struct Cli {
     #[command(subcommand)]
     command: Commands,
@@ -30,7 +30,7 @@ pub enum Commands {
         )]
         listen: String,
     },
-    Generate {
+    Completions {
         shell: Shell,
     },
 }
@@ -75,7 +75,7 @@ pub fn system() {
                 let _ = th.join();
             }
         }
-        Commands::Generate { shell } => {
+        Commands::Completions { shell } => {
             let mut cli_gen = Cli::command();
             generate(shell, &mut cli_gen, "tenjin", &mut io::stdout());
         }
